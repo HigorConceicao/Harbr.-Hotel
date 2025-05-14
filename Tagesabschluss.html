@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tagesabschluss</title>
+  <link rel="stylesheet" href="Tagesabschluss.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header style="text-align: center;">HARBR. Tagesabschluss</header>
+  <br>
+  <br>
+  <br>
+  <div id="mainPage" class="container">
+    <table class="vergleich-tabelle" style="margin: 0 auto;">
+      <thead>
+        <tr>
+          <th>Karte</th>
+          <th>EFT</th>
+          <th>EC-Gerät</th>
+          <th>Protel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MasterCard</td>
+          <td><input type="number" name="eft_master" step="0.01" /></td>
+          <td><input type="number" name="ecg_master" step="0.01" /></td>
+          <td><input type="number" name="protel_master" step="0.01" /></td>
+        </tr>
+        <tr>
+          <td>Visa</td>
+          <td><input type="number" name="eft_visa" step="0.01" /></td>
+          <td><input type="number" name="ecg_visa" step="0.01" /></td>
+          <td><input type="number" name="protel_visa" step="0.01" /></td>
+        </tr>
+        <tr>
+          <td>EC-Karte</td>
+          <td><input type="number" name="eft_ec" step="0.01" /></td>
+          <td><input type="number" name="ecg_ec" step="0.01" /></td>
+          <td><input type="number" name="protel_ec" step="0.01" /></td>
+        </tr>
+        <tr>
+          <td>Maestro</td>
+          <td><input type="number" name="eft_maestro" step="0.01" /></td>
+          <td><input type="number" name="ecg_maestro" step="0.01" /></td>
+          <td><input type="number" name="protel_maestro" step="0.01" /></td>
+        </tr>
+        <tr>
+          <td>American Express</td>
+          <td><input type="number" name="eft_amex" step="0.01" /></td>
+          <td><input type="number" name="ecg_amex" step="0.01" /></td>
+          <td><input type="number" name="protel_amex" step="0.01" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="text-align: center;">
+      <!-- Botão "Analyse" -->
+      <button id="analyseBtn" onclick="analyze()">Analyse</button>
+    </div>
+
+    <div id="merchantContainer">
+  <h3>Merchant-Umsätze</h3>
+  <div id="merchantInputs"></div>
+  <button id="addMerchantBtn" onclick="addMerchantValue()"> neuer Wert</button>
+
+
+  
+  <div class="merchant-summary">
+    <p>Summe: <span id="merchantSum">0.00</span> €</p>
+    <label for="merchantProtel">Protel:</label>
+    <input type="number" id="merchantProtel" oninput="checkMerchantDifference()" />
+    <p>Differenz: <span id="merchantDiff" style="color: green;">0.00</span> €</p>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Segunda página -->
+  <div id="analysePage" class="container" style="display: none;">
+    <h2 style="text-align: center;">Analysebericht</h2>
+    <div id="resultTableContainer" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+  <div id="resultTable" style="flex: 1;"></div>
+  <div id="merchantResultTable" style="flex: 1;"></div>
+</div>
+
+    <br>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <button onclick="downloadPDF()">PDF</button>
+      <button onclick="goBack()">Zurück</button>
+      <button onclick="sendEmail()">Email</button>
+
+    </div>
+  </div>
+
+  <script src="Tagesabschluss.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
