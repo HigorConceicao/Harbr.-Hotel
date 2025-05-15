@@ -185,7 +185,7 @@ function sendEmail() {
   if (hasDifferences) {
     emailBody += `\n\n\nLiebe Grüße\n\nHigor`;
     const subject = `Tagesabschluss - Differenz - ${formattedDate}`;
-    const mailtoLink = `mailto:eduhigor@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:alexa.bistricky@harbr.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
     window.location.href = mailtoLink;
   } else {
     alert("Es gibt keine Differenzen zu senden.");
