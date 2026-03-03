@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#004080">
+  <title>Trinkgeld-Manager</title>
+  <link rel="stylesheet" href="Trinkgeld.css"/>
+</head>
+<body>
+  <header>
+    <p id="greeting" class="greeting-text"></p>
+    <h1>Trinkgeld-HARBR</h1>
+  </header> 
+ 
+  <main>
+    <section>
+      <label for="shift">Dienst:</label>
+      <select id="shift">
+        <option value="Frühdienst">Frühdienst</option>
+        <option value="Spätdienst">Spätdienst</option>
+        <option value="Nachtdienst">Nachtdienst</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>Mitarbeiter auswählen</h2>
+      <label for="employeeSelect">Mitarbeiter:</label>
+      <select id="employeeSelect">
+        <option value="">-- bitte auswählen --</option>
+      </select>
+      <button type="button" id="addEmployeeBtn">Hinzufügen</button>
+      <ul id="employeeList"></ul>
+    </section>
+
+    <section>
+      <h2>Trinkgeld eintragen</h2>
+      <label for="tipDate">Datum:</label>
+      <input type="date" id="tipDate" />
+      <input type="number" id="tipAmount" placeholder="Trinkgeld in €" />
+      <button onclick="registerTip()">Eintragen</button>
+    </section>
+
+    <section>
+      <h2>Verlauf</h2>
+      <div id="history"></div>
+    </section>
+  </main>
+
+  <div class="button-container">
+    <button id="toHistoryBtn">Historie</button>
+  </div>
+
+  <script src="Trinkgeld.js"></script>
+</body>
+</html>
