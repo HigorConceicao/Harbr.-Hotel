@@ -1,0 +1,133 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #004080;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 1rem;
+}
+
+form {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0060c0;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto 1rem auto;
+}
+
+.button-row button {
+  width: 50%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #004080;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+
+/* iPad/iOS: evita zoom automático em campos */
+input[type="date"], select, #codeInput, button {
+  font-size: 16px; /* iOS */
+}
+
+button, input[type="date"], select, #codeInput {
+  min-height: 44px;
+}
+
+/* iPad/tablet: formulário em grade e tabela mais larga */
+@media (min-width: 768px) {
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    gap: 1rem;
+    align-items: end;
+  }
+
+  #filterButton {
+    margin-top: 0;
+    height: 44px;
+  }
+
+  table, .button-row {
+    max-width: 980px;
+  }
+}
