@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#004080">
+  <title>Trinkgeld HARBR - Historie</title>
+  <link rel="stylesheet" href="historico.css" />
+
+</head>
+<body>
+  <header>
+    <h1>Historie</h1>
+  </header>
+
+  <main>
+    <form id="filterForm">
+      <label for="startDate">Von:</label>
+      <input type="date" id="startDate" name="startDate">
+
+      <label for="endDate">Bis:</label>
+      <input type="date" id="endDate" name="endDate">
+
+      <label for="shiftFilter">Dienst:</label>
+      <select id="shiftFilter">
+        <option value="">Alle</option>
+        <option value="Frühdienst">Frühdienst</option>
+        <option value="Spätdienst">Spätdienst</option>
+        <option value="Nachtdienst">Nachtdienst</option>
+      </select>
+
+      <label for="codeInput">Code:</label>
+      <input type="text" id="codeInput" placeholder="z.B. KBH">
+
+      <button type="submit" id="filterButton">Filtern</button>
+    </form>
+
+    <div class="button-row">
+      <button id="backButton">Zurück</button>
+      <button id="deleteAllBtn">Alles löschen</button>
+    </div>
+
+    <table id="historyTable">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Dienst</th>
+          <th>Mitarbeiter</th>
+          <th>Betrag (€)</th>
+          <th>Aktion</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script src="historico.js"></script>
+</body>
+</html>
